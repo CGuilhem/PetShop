@@ -5,7 +5,7 @@
              version="3.0">
 
   <!-- Pour se connecter à la BDD PetShop de mon clever cloud -->
-  <persistence-unit name="default">
+  <persistence-unit name="PetShop">
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://blbtd8hprouutzzshfei-mysql.services.clever-cloud.com:3306/blbtd8hprouutzzshfei"/>
@@ -17,8 +17,6 @@
       <property name="hibernate.format_sql" value="true"/>
 
       <property name="hibernate.hbm2ddl.auto" value="update"/>
-
-      <property name="hibernate.archive.autodetection" value="" />
     </properties>
   </persistence-unit>
 
