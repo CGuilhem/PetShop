@@ -16,7 +16,8 @@ public class PetStore {
     private String name;
     private String managerName;
 
-    @OneToMany(mappedBy = "petStore")
+
+    @OneToMany(mappedBy = "petStore", cascade = CascadeType.PERSIST)
     private Set<Animal> animaux;
     {
         animaux = new HashSet<>();
@@ -31,19 +32,16 @@ public class PetStore {
         products = new ArrayList<>();
     }
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.PERSIST)
     private Address address;
 
     public PetStore() {
 
     }
 
-    public PetStore(String name, String managerName, Set<Animal> animaux, List<Product> products, Address address) {
+    public PetStore(String name, String managerName) {
         this.name = name;
         this.managerName = managerName;
-        this.animaux = animaux;
-        this.products = products;
-        this.address = address;
     }
 
     public void setId(Long id) {
